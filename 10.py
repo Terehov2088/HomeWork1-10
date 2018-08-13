@@ -16,30 +16,39 @@ print('''Условия задачи 3:
 
 print('Решение:')
 
-Leo = 'Leo Tolstoy*1828-08-28*1910-11-20'
-Leo1 = Leo.split("*")
+Leo_tolstoy = 'Leo Tolstoy*1828-08-28*1910-11-20'
+Leo_tolstoy_split = Leo_tolstoy.split("*")
 
-L1 = str(Leo1[0])
-L2 = str(Leo1[1])
-L3 = str(Leo1[2])
+Leo_tolstoy_name = str(Leo_tolstoy_split[0])
+Leo_tolstoy_born = str(Leo_tolstoy_split[1])
+Leo_tolstoy_death = str(Leo_tolstoy_split[2])
 
-L21 = int(L2[0:4])
-L31 = int(L3[0:4])
-L0 = int(math.fabs(L31-L21))
+Leo_tolstoy_born_split_1 = (Leo_tolstoy_born.split('-'))
+Leo_tolstoy_death_split_1 = (Leo_tolstoy_death.split('-'))
+
+Leo_tolstoy_born_year = int(Leo_tolstoy_born_split_1[0])
+Leo_tolstoy_death_year = int(Leo_tolstoy_death_split_1[0])
+
+Leo_tolstoy_live = int(math.fabs(Leo_tolstoy_death_year - Leo_tolstoy_born_year))
 
 
-print('%s, %s ' % (L1,L0))
+print('%s, %s ' % (Leo_tolstoy_name,Leo_tolstoy_live))
 
 
 Marc = 'Marcus Aurelius*121-04-26*180-03-17'
-Marc1 = Marc.split('*')
+Marc_split = Marc.split("*")
 
-M1 = str(Marc1[0])
-M2 = str(Marc1[1])
-M3 = str(Marc1[2])
+Marc_name = str(Marc_split[0])
+Marc_born = str(Marc_split[1])
+Marc_death = str(Marc_split[2])
 
-M21 = int(M2[0:3])
-M31 = int(M3[0:3])
-M0 = int(math.fabs(M31-M21))
+Marc_born_split_1 = (Marc_born.split('-'))
+Marc_death_split_1 = (Marc_death.split('-'))
 
-print("{}, {}".format(M1,M0))
+Marc_born_year = int(Marc_born_split_1[0])
+Marc_death_year = int(Marc_death_split_1[0])
+
+Marc_live = int(math.fabs(Marc_death_year - Marc_born_year))
+
+
+print('%s, %s ' % (Marc_name,Marc_live))
