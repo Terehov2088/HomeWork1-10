@@ -43,5 +43,3 @@ M31 = int(M3[0:3])
 M0 = int(math.fabs(M31-M21))
 
 print("{}, {}".format(M1,M0))
-
-print('IDE')

@@ -10,16 +10,16 @@ print('''Условия задачи 3:
 
 print('Решение задачи №3:')
 print('Введите данные в формате: employee_first_name')
-snake_case = str(input())
+snake_case = str(input("Поле ввода:"))
 
-sp = snake_case.split("_")
+snake_split = snake_case.split("_")
 
-s1 = str(sp[0])
-s2 = str(sp[1])
-s3 = str(sp[2])
+snake_1 = str(snake_split[0])
+snake_2 = str(snake_split[1])
+snake_3 = str(snake_split[2])
 
-CamelCase = (s1.title() + s2.title() + s3.title())
+Camel_case = (snake_1.title() + snake_2.title() + snake_3.title())
 print('Формат snake_case ', snake_case)
 print('Конвертируется в:')
-print("Формат CamelCase:", CamelCase)
+print("Формат CamelCase:", Camel_case)
 print()

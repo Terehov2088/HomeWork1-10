@@ -12,11 +12,11 @@ print('Решение задачи №1:')
 print('Вариант 1:')
 american_data = '05.17.2016'
 
-american_data1 = american_data.split(".")
+american_data_1 = american_data.split(".")
 
-day = int(american_data1[0])
-month = int(american_data1[1])
-year = int(american_data1[2])
+day = int(american_data_1[0])
+month = int(american_data_1[1])
+year = int(american_data_1[2])
 
 print('\n Европейская дата будет выглядеть так: %d.%d.%d ' %
       (month, day, year))
@@ -33,17 +33,17 @@ print('Вариант 3:')
 american_data = '05.17.2016'
 europe_data = '17.05.2016'
 
-american_data1 = american_data.split(".")
+american_data_1 = american_data.split(".")
 
-day = str(american_data1[0]) + ('.')
-month = str(american_data1[1]) + ('.')
-year = str(american_data1[2])
+day = str(american_data_1[0]) + ('.')
+month = str(american_data_1[1]) + ('.')
+year = str(american_data_1[2])
 
-american_data2 = month + day + year
-print('\n Европейская дата будет выглядеть так:', american_data2)
+american_data_2 = month + day + year
+print('\n Европейская дата будет выглядеть так:', american_data_2)
 print()
 print('Бонус плюс на барабане: ')
-if american_data2 == europe_data:
+if american_data_2 == europe_data:
     print('Строки одинаковы')
 else:
     print("Строки не одинаковы")
@@ -57,17 +57,17 @@ print('''Условия задачи 2:
 
 print('Решение задачи №2:')
 print('Введите данные в формате: Имя Фамилия')
-FIO = str(input())
+Name_lastname = str(input('Поле ввода:'))
 
-FIO1 = FIO.split(" ")
+Name_lastname_1 = Name_lastname.split(" ")
 
-Name = FIO1[0]
-Last_name = FIO1[1]
-Probel = (" ")
-FIO2 = (Last_name + Probel + Name)
-print('Имя и фамилия студента', FIO)
+Name = Name_lastname_1[0]
+Lastname = Name_lastname_1[1]
+Space = (" ")
+Lastname_name = (Lastname + Space + Name)
+print('Имя и фамилия студента', Name_lastname)
 print('Конвертируется в:')
-print("Фамилию и имя студента:", FIO2)
+print("Фамилию и имя студента:", Lastname_name)
 print()
 
 
