@@ -57,17 +57,17 @@ print('''Условия задачи 2:
 
 print('Решение задачи №2:')
 print('Введите данные в формате: Имя Фамилия')
-Name_surname = str(input('Поле ввода:'))
+name_surname = str(input('Поле ввода:'))
 
-Name_surname_split = Name_surname.split(" ")
+name_surname_split = name_surname.split(" ")
 
-Name = Name_surname_split[0]
-Surname = Name_surname_split[1]
-Space = (" ")
-Surname_name = (Surname + Space + Name)
-print('Имя и фамилия студента', Name_surname)
+name = name_surname_split[0]
+surname = name_surname_split[1]
+space = (" ")
+surname_name = (surname + space + name)
+print('Имя и фамилия студента', name_surname)
 print('Конвертируется в:')
-print("Фамилию и имя студента:", Surname_name)
+print("Фамилию и имя студента:", surname_name)
 print()
 
 
