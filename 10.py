@@ -23,11 +23,11 @@ Leo_tolstoy_name = str(Leo_tolstoy_split[0])
 Leo_tolstoy_born = str(Leo_tolstoy_split[1])
 Leo_tolstoy_death = str(Leo_tolstoy_split[2])
 
-Leo_tolstoy_born_split_1 = (Leo_tolstoy_born.split('-'))
-Leo_tolstoy_death_split_1 = (Leo_tolstoy_death.split('-'))
+Leo_tolstoy_born_split = (Leo_tolstoy_born.split('-'))
+Leo_tolstoy_death_split = (Leo_tolstoy_death.split('-'))
 
-Leo_tolstoy_born_year = int(Leo_tolstoy_born_split_1[0])
-Leo_tolstoy_death_year = int(Leo_tolstoy_death_split_1[0])
+Leo_tolstoy_born_year = int(Leo_tolstoy_born_split[0])
+Leo_tolstoy_death_year = int(Leo_tolstoy_death_split[0])
 
 Leo_tolstoy_live = int(math.fabs(Leo_tolstoy_death_year - Leo_tolstoy_born_year))
 
@@ -42,11 +42,11 @@ Marc_name = str(Marc_split[0])
 Marc_born = str(Marc_split[1])
 Marc_death = str(Marc_split[2])
 
-Marc_born_split_1 = (Marc_born.split('-'))
-Marc_death_split_1 = (Marc_death.split('-'))
+Marc_born_split= (Marc_born.split('-'))
+Marc_death_split = (Marc_death.split('-'))
 
-Marc_born_year = int(Marc_born_split_1[0])
-Marc_death_year = int(Marc_death_split_1[0])
+Marc_born_year = int(Marc_born_split[0])
+Marc_death_year = int(Marc_death_split[0])
 
 Marc_live = int(math.fabs(Marc_death_year - Marc_born_year))
 
