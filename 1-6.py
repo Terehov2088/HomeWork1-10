@@ -27,7 +27,7 @@ print('Ответ: z1=', z1)
 print( )
 print('Решение задачи №2:')
 print('Подставив наши переменные в мат. выражение: z2 = math.fmod((math.pow(a,2)+b**2),2)')
-z2 = math.fmod((math.pow(a,2)+b**2),2)
+z2 = (math.pow(a, 2)+ b**2) / 2
 print('Ответ: z2=',z2)
 
 print( )
