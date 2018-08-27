@@ -22,7 +22,4 @@ def chess_reward(cell_number, total_number_of_corns):
             return counter, inventor_price
 
 result1, result2 = chess_reward(64, 1000000)
-print(result1)
-print(result2)
-
-
+print('The number of corns will be more than one million in: %d cell and the total number of cornss that the inventor won: %d corn ' % (result1,result2))
