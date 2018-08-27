@@ -8,18 +8,21 @@ def get_max_digit(number): # returns int
 
 def get_max_digit1(number):
     biggest_number = 0
-    number1 = (''.join([random.choice(str('0123456789')) for x in range(number)]))
-    print(type(number1))
-    number1 = int(number1)
-    print('12 digit number: %d' % number1)
 
-    biggest_number = number1 % 10
-    number1 = number1 // 10
-    for i in range(number):
-        if number1 % 10 > biggest_number:
-            biggest_number = number1 % 10
-        number1 = number1 // 10
+    print('12 digit number: %d' % number)
+
+    biggest_number = number % 10
+    number = number // 10
+    for i in range(12):
+        if number % 10 > biggest_number:
+            biggest_number = number % 10
+        number = number // 10
     return biggest_number
 
-result = get_max_digit1(12)
+
+number = (''.join([random.choice(str('0123456789')) for x in range(12)]))
+print(type(number))
+number = int(number)
+
+result = get_max_digit1(number)
 print('Biggest number of 12 digit number is number: %d' % result)
