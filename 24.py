@@ -13,30 +13,30 @@ list_of_enrollees = ['Roy Air', 'Donald Jakob', 'Kim Sell', 'Vladimir Xen', 'Van
 
 
 def group_by_surname(list_of_enrollees):
-    A_I = []
-    J_P = []
-    Q_T = []
-    U_Z = []
-    sum_A_I = 0
-    sum_J_P = 0
-    sum_Q_T = 0
-    sum_U_Z = 0
+    a_i = []
+    j_p = []
+    q_t = []
+    u_z = []
+    sum_a_i = 0
+    sum_j_p = 0
+    sum_q_t = 0
+    sum_u_z = 0
     for elem in list_of_enrollees:
         elem1 = elem.split(' ')
         last_name = elem1[1]
         if ord("A") <= ord(last_name[0]) <= ord("I"):
-            A_I.append(elem)
-            sum_A_I += 1
+            a_i.append(elem)
+            sum_a_i += 1
         elif ord("J") <= ord(last_name[0]) <= ord("P"):
-            J_P.append(elem)
-            sum_J_P += 1
+            j_p.append(elem)
+            sum_j_p += 1
         elif ord("Q") <= ord(last_name[0]) <= ord("T"):
-            Q_T.append(elem)
-            sum_Q_T += 1
+            q_t.append(elem)
+            sum_q_t += 1
         elif ord("U") <= ord(last_name[0]) <= ord("Z"):
-            U_Z.append(elem)
-            sum_U_Z += 1
-    return sum_A_I, sum_J_P, sum_Q_T, sum_U_Z
+            u_z.append(elem)
+            sum_u_z += 1
+    return sum_a_i, sum_j_p, sum_q_t, sum_u_z
 
 
 result1, result2, result3, result4 = group_by_surname(list_of_enrollees)
