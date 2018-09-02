@@ -13,14 +13,15 @@ def get_max_digit1(number):
 
     biggest_number = number % 10
     number = number // 10
-    for i in range(12):
+    while number > 0:
         if number % 10 > biggest_number:
             biggest_number = number % 10
         number = number // 10
+        print(number)
     return biggest_number
 
 
-number = (''.join([random.choice(str('0123456789')) for x in range(12)]))
+number = (''.join([random.choice(str('0123456789')) for x in range(5)]))
 print(type(number))
 number = int(number)
 
