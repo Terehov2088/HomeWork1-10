@@ -23,7 +23,8 @@ def list_shuffle(list):
         list1.insert(sum, el)
         # print(list1)
         sum += 1
-    return list1
+    list = list1
+    return list
 
 
 print(list_shuffle(list))
