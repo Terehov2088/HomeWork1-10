@@ -8,7 +8,7 @@ import random
 
 
 list = [ i for i in range(1,101,2)]
-# random.shuffle(a)
+# random.shuffle(a)  а так проще )
 print(list)
 
 
