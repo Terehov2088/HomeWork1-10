@@ -1,3 +1,5 @@
+import string
+import random
 ("""Создать программу, которая запрашивает у пользователя произвольную строку символов. 
 Далее программа ее шифрует и выводит на экран в зашифрованном виде. 
 Шифрование происходит путем замены каждого символа символом, который находится на 5 позиций правее в предопределенной таблице шифрования. 
@@ -15,14 +17,15 @@ def encode(str_to_encode): # returns enсoded string
 """)
 
 
-GREETING = '''
-Enter the words you want to encrypt:
-    \'q\' for end write: '''
+# GREETING = '''
+# Enter the words you want to encrypt:
+#     \'q\' for end write: '''
 
 
-# list1 = []
-#
-# def input_from_keyboard(list1):
+
+
+# def input_from_keyboard():
+#     list1 = []
 #     while True:
 #         input_data = input(GREETING)
 #         if input_data == 'q':
@@ -32,10 +35,52 @@ Enter the words you want to encrypt:
 #         continue
 #     return list1
 #
-# input_from_keyboard(list1)
-# print(list1)
+# str_to_encode = input_from_keyboard()
+# print(str_to_encode)
+
+
+str_to_encode = input("Введите слово для закодировки: ")
+
+
+def encode(str_to_encode):
+    password_sequence = string.ascii_lowercase + string.digits
+    print(password_sequence)
+    encode_word = ""
+    for i in str_to_encode:
+        if ord("a") <= ord(i) <= ord("z") and ord(i) >= ord("v"):
+            i = chr(ord(i) - 70)
+            encode_word = encode_word + i
+        elif ord("0") <= ord(i) <= ord("4"):
+            i = chr(ord(i) + 5)
+            encode_word = encode_word + i
+        elif ord("5") <= ord(i) <= ord("9"):
+            i = chr(ord(i) + 44)
+            encode_word = encode_word + i
+        elif ord("a") <= ord(i) <= ord("u"):
+            i = chr(ord(i) + 5)
+            encode_word = encode_word + i
+        else:
+            i = chr(ord(i))
+            encode_word = encode_word + i
+    return encode_word
+
+print(encode(str_to_encode))
+
+
+        # for j in str_to_encode[i]:
+        #     if ord(j) >= ord("v"):
+        #         j = chr(ord(j) - 21)
+        #         print(j)
+        #     else:
+        #         j = chr(ord(j) + 5)
+        #         print(j)
+        # print(str_to_encode)
 
 
 
-shifr = [i for i in range(ord(a),ord(z))]
-print(shifr)
+
+
+# password_sequence = string.ascii_lowercase
+# print(type(password_sequence))
+# print(password_sequence)
+

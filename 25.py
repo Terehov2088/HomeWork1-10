@@ -14,7 +14,7 @@ print(list)
 
 def list_shuffle(list):
     list1 = []
-    sum = 0
+    idx = 0
     for elem in list:
         el = random.choice(list)
         for elem1 in list1:
@@ -22,7 +22,7 @@ def list_shuffle(list):
                 el = random.choice(list)
         list1.insert(sum, el)
         # print(list1)
-        sum += 1
+        idx += 1
     list = list1
     return list
 
