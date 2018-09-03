@@ -39,8 +39,6 @@ str_to_encode = input_from_keyboard()
 print("Слова до шифрования: ", str_to_encode)
 
 
-# str_to_encode = input("Введите слово для закодировки: ")
-
 
 def encode(str_to_encode):
     password_sequence = string.ascii_lowercase + string.digits

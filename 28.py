@@ -16,29 +16,6 @@ def encode(str_to_encode): # returns enсoded string
 
 """)
 
-
-# GREETING = '''
-# Enter the words you want to encrypt:
-#     \'q\' for end write: '''
-
-
-
-
-# def input_from_keyboard():
-#     list1 = []
-#     while True:
-#         input_data = input(GREETING)
-#         if input_data == 'q':
-#             break
-#
-#         list1.append(input_data)
-#         continue
-#     return list1
-#
-# str_to_encode = input_from_keyboard()
-# print(str_to_encode)
-
-
 str_to_encode = input("Введите слово для закодировки: ")
 
 
@@ -65,22 +42,4 @@ def encode(str_to_encode):
     return encode_word
 
 print(encode(str_to_encode))
-
-
-        # for j in str_to_encode[i]:
-        #     if ord(j) >= ord("v"):
-        #         j = chr(ord(j) - 21)
-        #         print(j)
-        #     else:
-        #         j = chr(ord(j) + 5)
-        #         print(j)
-        # print(str_to_encode)
-
-
-
-
-
-# password_sequence = string.ascii_lowercase
-# print(type(password_sequence))
-# print(password_sequence)
 

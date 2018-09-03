@@ -39,12 +39,8 @@ str_to_encode = input_from_keyboard()
 print(str_to_encode)
 
 
-# str_to_encode = input("Введите слово для закодировки: ")
-
-
 def encode(str_to_encode):
     password_sequence = string.ascii_lowercase + string.digits
-    print(password_sequence)
     encode_word = []
     idx = 0
     el = 0
@@ -75,22 +71,4 @@ def encode(str_to_encode):
     return encode_word
 
 print(encode(str_to_encode))
-
-
-        # for j in str_to_encode[i]:
-        #     if ord(j) >= ord("v"):
-        #         j = chr(ord(j) - 21)
-        #         print(j)
-        #     else:
-        #         j = chr(ord(j) + 5)
-        #         print(j)
-        # print(str_to_encode)
-
-
-
-
-
-# password_sequence = string.ascii_lowercase
-# print(type(password_sequence))
-# print(password_sequence)
 
