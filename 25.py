@@ -20,7 +20,7 @@ def list_shuffle(list):
         for elem1 in list1:
             if el == elem1:
                 el = random.choice(list)
-        list1.insert(sum, el)
+        list1.insert(idx, el)
         # print(list1)
         idx += 1
     list = list1
