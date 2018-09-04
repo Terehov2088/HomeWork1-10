@@ -7,23 +7,43 @@ import random
 
 
 
+# list = [ i for i in range(1,101,2)]
+# # list = random.sample(list, 50)
+# # random.shuffle(a)  а так проще )
+# print(list)
+#
+#
+# def list_shuffle(list):
+#     list1 = []
+#     idx = 0
+#     for elem in list:
+#         el = random.choice(list)
+#         for elem1 in list1:
+#             if el == elem1:
+#                 el = random.choice(list)
+#         list1.insert(idx, el)
+#         # print(list1)
+#         idx += 1
+#     list = list1
+#     return list
+#
+#
+# print(list_shuffle(list))
+
+
 list = [ i for i in range(1,101,2)]
+# list = random.sample(list, 50)
 # random.shuffle(a)  а так проще )
 print(list)
 
 
 def list_shuffle(list):
-    list1 = []
-    idx = 0
-    for elem in list:
-        el = random.choice(list)
-        for elem1 in list1:
-            if el == elem1:
-                el = random.choice(list)
-        list1.insert(idx, el)
-        # print(list1)
-        idx += 1
-    list = list1
+    len1 = len(list)
+    for _ in range(len1):
+        i = random.randint(0, len1-1)
+        j = random.randint(0, len1-1)
+        list[i], list[j] = list[j], list[i]
+
     return list
 
 

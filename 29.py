@@ -17,7 +17,10 @@ def gen_password(): # returns string
 def gen_password():
     end = True
     while end == True:
-        password = "".join([chr(i) for i in range(ord("a"), ord("z") + 1)] + [chr(i) for i in range(ord("A"), ord("Z") + 1)] + [str(i) for i in range(0, 10)])
+        password = "".join([chr(i) for i in range(ord("a"),
+        ord("z") + 1)] + [chr(i) for i in range(ord("A"),
+        ord("Z") + 1)] + [str(i) for i in range(0, 10)])
+        
         number = (''.join([random.choice(password) for i in range(8)]))
         idx1 = 0
         idx2 = 0
