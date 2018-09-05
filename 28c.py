@@ -21,17 +21,11 @@ shyfr = int(input("Введите шифр: "))
 
 
 
-def encode(str_to_encode, shyfr):
+def encode_word(str_to_encode, shyfr):
     def encode_symbol(char, len_password, shyfr):
         str_password_sequence = string.ascii_lowercase + string.digits
-        idx = 0
-        for elem in str_password_sequence:
-            if elem == char:
-                char = ((idx + shyfr) % len_password)
-                return char
-            else:
-                idx += 1
-
+        idx = str_password_sequence.index(char)
+        char = ((idx + shyfr) % len_password)
         return char
 
 
@@ -50,4 +44,4 @@ def encode(str_to_encode, shyfr):
     return encode_word
 
 
-print(encode(str_to_encode, shyfr))
+print(encode_word(str_to_encode, shyfr))
