@@ -17,37 +17,37 @@ def encode(str_to_encode): # returns enсoded string
 """)
 
 str_to_encode = input("Введите слово для закодировки: ")
+shyfr = int(input("Введите шифр: "))
 
 
 
-def encode(str_to_encode):
-    def symbol(i):
+def encode(str_to_encode, shyfr):
+    def encode_symbol(char, len_password, shyfr):
         str_password_sequence = string.ascii_lowercase + string.digits
         idx = 0
-        for char in str_password_sequence:
-            if i == char:
-                i = ((idx + 5) % 36)
-                return i
+        for elem in str_password_sequence:
+            if elem == char:
+                char = ((idx + shyfr) % len_password)
+                return char
             else:
                 idx += 1
 
-        return i
+        return char
 
 
-    # list_to_encode = list(str_to_encode)
-    # list_password_sequence = ([chr(i) for i in range(ord("a"), ord("z") + 1)] + [str(i) for i in range(0, 10)])
     str_password_sequence = string.ascii_lowercase + string.digits
     encode_word = ""
 
-    for i in str_to_encode:
-        if ord("a") <= ord(i) <= ord("z") or ord("0") <= ord(i) <= ord("9"):
-            idx1 = symbol(i)
-            i = str_password_sequence[idx1]
-            encode_word += i
+    for char in str_to_encode:
+        if char in str_password_sequence:
+            len_password = len(str_password_sequence)
+            idx1 = encode_symbol(char, len_password, shyfr)
+            char = str_password_sequence[idx1]
+            encode_word += char
         else:
-            encode_word = encode_word + i
+            encode_word = encode_word + char
 
     return encode_word
 
 
-print(encode(str_to_encode))
+print(encode(str_to_encode, shyfr))
