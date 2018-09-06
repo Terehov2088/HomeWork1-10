@@ -17,15 +17,15 @@ def encode(str_to_encode): # returns enсoded string
 """)
 
 str_to_encode = input("Введите слово для закодировки: ")
-shyfr = int(input("Введите шифр: "))
+offset = int(input("Введите шифр: "))
 
 
 
-def encode_word(str_to_encode, shyfr):
+def encode_word(str_to_encode, offset):
     def encode_symbol(char, len_password, shyfr):
         str_password_sequence = string.ascii_lowercase + string.digits
         idx = str_password_sequence.index(char)
-        char = ((idx + shyfr) % len_password)
+        char = ((idx + offset) % len_password)
         return char
 
 
@@ -35,7 +35,7 @@ def encode_word(str_to_encode, shyfr):
     for char in str_to_encode:
         if char in str_password_sequence:
             len_password = len(str_password_sequence)
-            idx1 = encode_symbol(char, len_password, shyfr)
+            idx1 = encode_symbol(char, len_password, offset)
             char = str_password_sequence[idx1]
             encode_word += char
         else:
@@ -44,4 +44,4 @@ def encode_word(str_to_encode, shyfr):
     return encode_word
 
 
-print(encode_word(str_to_encode, shyfr))
+print(encode_word(str_to_encode, offset))
