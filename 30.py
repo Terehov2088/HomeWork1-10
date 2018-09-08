@@ -15,10 +15,7 @@ n = int(input("Введите колличество чисел: "))
 #         if number != 0:
 #             for candidate in range(2 * number, n + 1, number):
 #                 natural_numbers[candidate - 2] = 0
-#     primes = []
-#     for number in natural_numbers:
-#         if number != 0:
-#             primes.append(number)
+#     primes = [number for number in natural_numbers if number != 0]
 #     return primes
 #
 # print(gen_primes(n))

@@ -30,21 +30,21 @@ text = """Для енота полоскуна наиболее пригодны
        На промысел выходит с наступлением сумерек, обходя свой участок (радиусом до 1,5 км) в поисках пищи.
        Енот редко удаляется более чем на 1,5 километра от своего жилища.
        При этом участки отдельных особей часто перекрывают друг на друга, и, как результат,
-       плотность енота в угодьях может быть довольно высокой"""
+       плотность енота в угодьях может быть довольно высоко"""
 
-
-
-
-
-
-# text = "Для енота полоскуна наиболее пригодны смешанные леса со старыми дуплистыми деревьями и наличием водоёмов или болот."
 
 def pemrtuate(text):
 
     def permtuate_word(word):
         first = word[0]
-        last = word[-1]
-        middle = word[1:-1]
+        if word[-1] in string.punctuation:
+            last = word[-2]
+            middle = word[1:-2]
+            punctuatinon = word[-1]
+        else:
+            last = word[-1]
+            middle = word[1:-1]
+            punctuatinon = " "
         old_i = 0
         new_word = first
         for i in range(math.ceil(len(middle) / 3)):
@@ -53,11 +53,11 @@ def pemrtuate(text):
             sub_middle = "".join(sub_middle)
             new_word = new_word + sub_middle
             old_i += 3
-        new_word = new_word + last
+        new_word = new_word + last + punctuatinon
         return new_word
 
 
-    word_list = [str(word.strip(".,!&?*()@#$%^&?\/")) for word in text.split()]
+    word_list = [str(word.strip()) for word in text.split()]
     new_text = ""
 
     for word in word_list:
@@ -70,11 +70,38 @@ def pemrtuate(text):
 
     return new_text
 
+result = pemrtuate(text)
+
+def line_translation(result):
+    result = result + str(chr(22323))
+    print(result)
+    b = ' \n'
+    idx = 0
+    idx1 = 1
+    result1 = ""
+    for char in result:
+        if char == result[-1]:
+            c = result[idx1:idx1 + idx + 1]
+            result1 = result1 + c
+        else:
+            if idx >= 80:
+                if char == " ":
+                    c = result[idx1:idx1 + idx]
+                    idx1 = idx1 + idx
+                    idx = 1
+                    result1 = result1 + c + b
+                else:
+                    idx += 1
+            else:
+                idx += 1
+
+    result1 = result1[0:-1]
 
 
 
+    return result1
 
-print(pemrtuate(text))
+print(line_translation(result))
 
 
 
