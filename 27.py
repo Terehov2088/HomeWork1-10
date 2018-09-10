@@ -30,7 +30,7 @@ text = """Для енота полоскуна наиболее пригодны
        На промысел выходит с наступлением сумерек, обходя свой участок (радиусом до 1,5 км) в поисках пищи.
        Енот редко удаляется более чем на 1,5 километра от своего жилища.
        При этом участки отдельных особей часто перекрывают друг на друга, и, как результат,
-       плотность енота в угодьях может быть довольно высоко"""
+       плотность енота в угодьях может быть довольно высоко."""
 
 
 def pemrtuate(text):
@@ -44,7 +44,7 @@ def pemrtuate(text):
         else:
             last = word[-1]
             middle = word[1:-1]
-            punctuatinon = " "
+            punctuatinon = ""
         old_i = 0
         new_word = first
         for i in range(math.ceil(len(middle) / 3)):
@@ -74,7 +74,6 @@ result = pemrtuate(text)
 
 def line_translation(result):
     result = result + str(chr(22323))
-    print(result)
     b = ' \n'
     idx = 0
     idx1 = 1
@@ -96,9 +95,7 @@ def line_translation(result):
                 idx += 1
 
     result1 = result1[0:-1]
-
-
-
+    
     return result1
 
 print(line_translation(result))
