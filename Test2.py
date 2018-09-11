@@ -1,5 +1,22 @@
 import random
 
+def pretty_print_matrix(matrix):
+
+    def find_max(matrix):
+        max = matrix[0][0]
+        for i in range(len(matrix)):
+            for j in range(len(matrix[0])):
+                if max < matrix[i][j]:
+                    max = matrix[i][j]
+        return max
+
+    formatter = "%%%dd" % (len(str(find_max(matrix)))+1)
+
+
+    for i in range(len(matrix)):
+        for j in range(len(matrix[0])):
+            print(formatter % matrix[i][j], end="")
+        print()
 
 
 """
@@ -9,6 +26,8 @@ import random
 5  9  6     <--- седловая точка (1,0)
 2  6  7
 """
+
+
 matrix_random = [[random.randint(0, 9) for i in range(3)] for j in range(3)]
 print(pretty_print_matrix(matrix_random))
 print("********===Начало функции===*********")
@@ -48,7 +67,7 @@ def saddle_elements(matrix):
     else:
         print('Координаты седальной точки: %s' % result1)
         return result1
-print(saddle_elements(matrix_random))
+saddle_elements(matrix_random)
 
 
 
@@ -86,4 +105,4 @@ def saddle_elements(matrix):
 
 print(saddle_elements(matrix_random))
 print('==================')
-print(pretty_print_matrix(matrix_random))
+pretty_print_matrix(matrix_random)
