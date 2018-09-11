@@ -30,12 +30,80 @@ text = """Для енота полоскуна наиболее пригодны
        На промысел выходит с наступлением сумерек, обходя свой участок (радиусом до 1,5 км) в поисках пищи.
        Енот редко удаляется более чем на 1,5 километра от своего жилища.
        При этом участки отдельных особей часто перекрывают друг на друга, и, как результат,
-       плотность енота в угодьях может быть довольно высоко."""
+       плотность енота в угодьях может быть довольно высокой."""
+
+
+# def pemrtuate(text):
+#
+#     def permtuate_word(word, mix_number):
+#         first = word[0]
+#         if word[-1] in string.punctuation:
+#             last = word[-2]
+#             middle = word[1:-2]
+#             punctuatinon = word[-1]
+#         else:
+#             last = word[-1]
+#             middle = word[1:-1]
+#             punctuatinon = ""
+#         old_i = 0
+#         new_word = first
+#         for i in range(math.ceil(len(middle) / mix_number)):
+#             sub_middle = list(middle[old_i:old_i + mix_number])
+#             random.shuffle(sub_middle)
+#             sub_middle = "".join(sub_middle)
+#             new_word = new_word + sub_middle
+#             old_i += mix_number
+#         new_word = new_word + last + punctuatinon
+#         return new_word
+#
+#     mix_number = int(input("Введите число перемешивания в слове: "))
+#     word_list = [str(word.strip()) for word in text.split()]
+#     new_text = ""
+#
+#     for word in word_list:
+#         if len(word) > 3:
+#             new_word = permtuate_word(word, mix_number)
+#             new_text = new_text + " " + new_word
+#         else:
+#             new_text = new_text + " " + word
+#
+#
+#     return new_text
+#
+# result = pemrtuate(text)
+#
+# def line_translation(result):
+#     result = result + str(chr(22323))
+#     b = ' \n'
+#     idx = 0
+#     idx1 = 1
+#     result1 = ""
+#     for char in result:
+#         if char == result[-1]:
+#             c = result[idx1:idx1 + idx + 1]
+#             result1 = result1 + c
+#         else:
+#             if idx >= 80:
+#                 if char == " ":
+#                     c = result[idx1:idx1 + idx]
+#                     idx1 = idx1 + idx
+#                     idx = 1
+#                     result1 = result1 + c + b
+#                 else:
+#                     idx += 1
+#             else:
+#                 idx += 1
+#
+#     result1 = result1[0:-1]
+#
+#     return result1
+#
+# print(line_translation(result))
 
 
 def pemrtuate(text):
 
-    def permtuate_word(word):
+    def permtuate_word(word, mix_number):
         first = word[0]
         if word[-1] in string.punctuation:
             last = word[-2]
@@ -47,22 +115,22 @@ def pemrtuate(text):
             punctuatinon = ""
         old_i = 0
         new_word = first
-        for i in range(math.ceil(len(middle) / 3)):
-            sub_middle = list(middle[old_i:old_i + 3])
+        for i in range(math.ceil(len(middle) / mix_number)):
+            sub_middle = list(middle[old_i:old_i + mix_number])
             random.shuffle(sub_middle)
             sub_middle = "".join(sub_middle)
             new_word = new_word + sub_middle
-            old_i += 3
+            old_i += mix_number
         new_word = new_word + last + punctuatinon
         return new_word
 
-
+    mix_number = int(input("Введите число перемешивания в слове: "))
     word_list = [str(word.strip()) for word in text.split()]
     new_text = ""
 
     for word in word_list:
         if len(word) > 3:
-            new_word = permtuate_word(word)
+            new_word = permtuate_word(word, mix_number)
             new_text = new_text + " " + new_word
         else:
             new_text = new_text + " " + word
@@ -71,32 +139,23 @@ def pemrtuate(text):
     return new_text
 
 result = pemrtuate(text)
+text = result
 
-def line_translation(result):
-    result = result + str(chr(22323))
-    b = ' \n'
+def line_translation(text):
+    LEN_LIMIT = 80
     idx = 0
-    idx1 = 1
-    result1 = ""
-    for char in result:
-        if char == result[-1]:
-            c = result[idx1:idx1 + idx + 1]
-            result1 = result1 + c
+    result, line = '', ''
+    for char in text:
+        line_end = (idx >= LEN_LIMIT) and (not char.isalnum())
+        if line_end:
+            line += '\n'
+            result += line
+            idx = 0
+            line = ''
         else:
-            if idx >= 80:
-                if char == " ":
-                    c = result[idx1:idx1 + idx]
-                    idx1 = idx1 + idx
-                    idx = 1
-                    result1 = result1 + c + b
-                else:
-                    idx += 1
-            else:
-                idx += 1
-
-    result1 = result1[0:-1]
-    
-    return result1
+            line += char
+            idx += 1
+    return result
 
 print(line_translation(result))
 
