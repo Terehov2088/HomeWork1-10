@@ -19,17 +19,17 @@ def pretty_print_matrix(matrix):
         print()
 
 
-"""
+print("""
 Задача №10.  Для заданной матрицы (3*3) найти все ее седловые точки и вернуть список их координат (список списков).
 Седловых точек может не быть, может быть 1 и более. Например, для матрицы ниже результат должен быть [[1, 0]]:
 3  8  7
 5  9  6     <--- седловая точка (1,0)
 2  6  7
-"""
+""")
 
 
 matrix_random = [[random.randint(0, 9) for i in range(3)] for j in range(3)]
-print(pretty_print_matrix(matrix_random))
+pretty_print_matrix(matrix_random)
 print("********===Начало функции===*********")
 
 def saddle_elements(matrix):
@@ -69,40 +69,58 @@ def saddle_elements(matrix):
         return result1
 saddle_elements(matrix_random)
 
+print()
 
+print("Задача №11. В двумерном списке (матрица=список списков) отсортировать четные столбцы по возрастанию, а нечетные - по убыванию.")
 
-
-"Задача №11. В двумерном списке (матрица=список списков) отсортировать четные столбцы по возрастанию, а нечетные - по убыванию."
-
-matrix_random = [[random.randint(0, 9) for i in range(3)] for j in range(3)]
+matrix_random = [[random.randint(0, 9) for i in range(3)] for j in range(4)]
 print(pretty_print_matrix(matrix_random))
 print("********===Начало функции===*********")
 
 
-def saddle_elements(matrix):
-   matrix1 = []
-   for i in range(len(matrix)):
-       col = []
-       for elem in matrix:
-           col.append(elem[i])
-       print('до %s' % col)
-       if i % 2 == 1:
-           col.sort()
-           print("posle %s" % col)
-           matrix1.append(col)
-       else:
-           col.sort(reverse=True)
-           print("posle %s" % col)
-           matrix1.append(col)
-   # print(pretty_print_matrix(matrix1))
+def col_sort(matrix):
+    m = len(matrix)
+    n = len(matrix[0])
+    if n > m:
+        delta = n - m
+        len1 = (len(matrix) + delta)
+    elif n < m:
+        delta = m - n
+        len1 = (len(matrix) - delta)
+    elif n == m:
+        len1 = (len(matrix))
 
-   for i in range(len(matrix)):
-       for j in range(len(matrix[i])):
-           matrix[i][j] = matrix1[j][i]
-   return matrix
+    idx = 0
+    matrix1 = []
+    for i in range(len1):
+        col = []
+        for elem in matrix:
+            col.append(elem[i])
+
+        print('до %s' % col)
+        if idx % 2 == 1:
+            col.sort()
+            print("posle %s" % col)
+            matrix1.append(col)
+            idx += 1
+        else:
+            col.sort(reverse=True)
+            print("posle %s" % col)
+            matrix1.append(col)
+            idx += 1
+    # print(pretty_print_matrix(matrix1))
+
+
+    idx1 = 0
+    for i in range(len(matrix)):
+        for j in range(len1):
+            matrix[i][j] = matrix1[j][i]
+    idx1 +=1
+
+    return matrix
 
 
 
-print(saddle_elements(matrix_random))
+print(col_sort(matrix_random))
 print('==================')
 pretty_print_matrix(matrix_random)
