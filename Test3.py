@@ -30,7 +30,7 @@ multiplication_table = [[(i+1)*(j+1) for i in range(10)] for j in range(10)]
 print()
 
 
-def multiplication_example():
+def summer_test():
     matrix = [[0 for i in range(3)] for j in range(15)]
     for i in range(len(matrix)):
         end = True
@@ -38,7 +38,6 @@ def multiplication_example():
             for j in range(len(matrix[i]) - 1):
                 matrix[i][j] = random.randint(2, 9)
             matrix[i][j + 1] = (matrix[i][j]) * (matrix[i][j - 1])
-            # print(matrix[i][j + 1])
             end = False
             elem = matrix[i][j + 1]
             idx = 0
@@ -48,10 +47,11 @@ def multiplication_example():
             if idx > 1:
                 end = True
 
-    return matrix
+    lst = [str(elem[0]) + '*' + str(elem[1]) for elem in matrix]
+    return lst
 
 
-pretty_print_matrix(multiplication_example())
+print(summer_test())
 
 
 
