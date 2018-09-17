@@ -106,19 +106,21 @@ def find_entry_age_phonebook():
 #------------------------------------------------------------------------------
 def delete_entry_name_phonebook():
     name = str(input("    Enter name: "))
-    found = False
-    idx = 0
-    for entry in phone_book:
-        if entry["name"] == name:
-            del phone_book[idx]
-            print_phonebook()
-            idx += 1
-            found = True
-        else:
-            idx +=1
+    end = True
+    while end:
+        found = False
+        idx = 0
+        for entry in phone_book:
+            if entry["name"] == name:
+                del phone_book[idx]
+                print_phonebook()
+                found = True
+            else:
+                idx += 1
 
-    if not found:
-        printError("Not found!!")
+        if not found:
+            printError("Not found!!")
+            end = False
 
 
 #------------------------------------------------------------------------------
