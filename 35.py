@@ -21,6 +21,7 @@ class Circle():
         print('x=', self.x)
         print('y=', self.y)
         print('Radius:', self.r)
+        print('x= %d, y= %d', % (self.x, self.y))
 
 
 class Point():

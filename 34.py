@@ -8,8 +8,8 @@ import math
 import random
 
 class Godzilla():
-    AGE_OF_ADULT_GODZILLA = 6
-    fill_stomach = 0
+    fill_stomach = 0 # глобальный счетчик получается у меня это
+    PERCENT_FILL = 90/100
 
 
     def __init__(self, name, age, stomach_value):
@@ -28,7 +28,7 @@ class Godzilla():
 
     def godzilla_eat(self, mass):
         fill_stomach = self.fill_stomach
-        if fill_stomach < int(self.stomach_value*90/100) and int(fill_stomach + mass) < int(self.stomach_value*90/100):
+        if fill_stomach < int(self.stomach_value*self.PERCENT_FILL) and int(fill_stomach + mass) < int(self.stomach_value*self.PERCENT_FILL):
             fill_stomach = fill_stomach + mass
             self.fill_stomach = fill_stomach
             print("Годзилла %s не сытый, и еще может жрать студентов которые не сделали ДЗ" % self.name)
