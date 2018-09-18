@@ -61,6 +61,8 @@
 import math
 
 class Godzilla():
+    AGE_OF_ADULT_GODZILLA = 6
+
 
     def __init__(self, name, age):
         self.name = name
@@ -78,10 +80,10 @@ class Godzilla():
         # print('Godzilla say:', self.godzilla_full())  # хотел сделать метод который выводил бы сообщение после того как будет указана текущее заполнение желудка, но пока никак не получилось
 
     def stomach_value(self):
-        if self.age <= 6:
+        if self.age <= self.AGE_OF_ADULT_GODZILLA:
             stomach_value = int(math.exp(self.age))
-        elif self.age > 6:
-            stomach_value = int(math.exp(6) + (math.exp(5)* self.age))
+        elif self.age > self.AGE_OF_ADULT_GODZILLA:
+            stomach_value = int(math.exp(self.AGE_OF_ADULT_GODZILLA) + (math.exp(self.AGE_OF_ADULT_GODZILLA-1)* self.age))
         return stomach_value
 
 
