@@ -104,23 +104,74 @@ def find_entry_age_phonebook():
 
 
 #------------------------------------------------------------------------------
+# def delete_entry_name_phonebook():
+#     name = str(input("    Enter name: "))
+#     end = True
+#     while end:
+#         found = False
+#         idx = 0
+#         for entry in phone_book:
+#             if entry["name"] == name:
+#                 del phone_book[idx]
+#                 print_phonebook()
+#                 found = True
+#             else:
+#                 idx += 1
+#
+#         if not found:
+#             printError("Not found!!")
+#             end = False
+
+
+# def delete_entry_name_phonebook():
+#     name = str(input("    Enter name: "))
+#     found = False
+#     idx = 0
+#     a = len(phone_book)
+#
+#     for i in range(a):
+#         print(phone_book[i])
+#         if phone_book[i]["name"] == name:
+#             # print(phone_book.index(entry))
+#             # del phone_book[idx]
+#             a = a -1
+#             print_phonebook()
+#             found = True
+#         else:
+#             idx += 1
+#
+#     if not found:
+#         printError("Not found!!")
+
+# def delete_entry_name_phonebook():
+#     name = str(input("    Enter name: "))
+#     found = False
+#     idx = 0
+#     a = (len(phone_book)-1)
+#     while a > 0:
+#         if phone_book[idx]["name"] == name:
+#             del phone_book[idx]
+#             a = a - 1
+#         else:
+#             a = a - 1
+#             idx = idx + 1
+#     if not found:
+#         print("All records deleted!!")
+
 def delete_entry_name_phonebook():
     name = str(input("    Enter name: "))
-    end = True
-    while end:
-        found = False
-        idx = 0
-        for entry in phone_book:
-            if entry["name"] == name:
-                del phone_book[idx]
-                print_phonebook()
-                found = True
-            else:
-                idx += 1
+    found = False
+    # idx = 0
+    idx = (len(phone_book)-1)
+    for i in range(idx, 0, -1):
+        print(phone_book[i])
+        print(phone_book[i]["name"])
+        if phone_book[i]["name"] == name:
+            del phone_book[i]
 
-        if not found:
-            printError("Not found!!")
-            end = False
+    if not found:
+        print("All records deleted!!")
+
 
 
 #------------------------------------------------------------------------------
