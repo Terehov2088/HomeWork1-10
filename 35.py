@@ -21,9 +21,9 @@ class Circle():
         print('Radius:', self.r)
 
 
-    def check_point(self):
-        a = int(input('Enter the coordinates of the point along the x axis:'))
-        b = int(input('Enter the coordinates of the point along the y axis:'))
+    def check_point(self, a, b):
+        # a = int(input('Enter the coordinates of the point along the x axis:'))
+        # b = int(input('Enter the coordinates of the point along the y axis:'))
 
         if math.pow((self.x - a), 2) + math.pow((self.y - b), 2) <= math.pow((self.r), 2):
             print('Точка находится в окружности')
@@ -33,7 +33,7 @@ class Circle():
 
 
 circle1 = Circle(2, 5, 10)
-circle1.check_point()
+circle1.check_point(10,12)
 print('================')
 circle1.pretty_print()
 
