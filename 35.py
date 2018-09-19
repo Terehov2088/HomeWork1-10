@@ -18,10 +18,9 @@ class Circle():
 
     def pretty_print(self):
         print('Circle with center:')
-        print('x=', self.x)
-        print('y=', self.y)
-        print('Radius:', self.r)
         print('x= %d, y= %d' % (self.x, self.y))
+        print('Radius:', self.r)
+
 
 
 class Point():
@@ -30,7 +29,7 @@ class Point():
         self.a = a
         self.b = b
 
-    def check_point(self):
+    def check_point(self, circle):
         # a = int(input('Enter the coordinates of the point along the x axis:'))
         # b = int(input('Enter the coordinates of the point along the y axis:'))
 
@@ -42,7 +41,7 @@ class Point():
 
 circle1 = Circle(2, 5, 10)
 point = Point(10, 20)
-point.check_point()
+point.check_point(circle1)
 print('================')
 circle1.pretty_print()
 
