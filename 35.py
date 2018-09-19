@@ -3,10 +3,6 @@
 Создать в классе окружности метод, который принимает в качестве параметра точку и проверяет находится ли данная точка внутри окружности.
 """
 import math
-
-
-
-
 class Circle():
 
     def __init__(self, x, y, r):
@@ -30,17 +26,16 @@ class Point():
         self.b = b
 
     def check_point(self, circle):
-        # a = int(input('Enter the coordinates of the point along the x axis:'))
-        # b = int(input('Enter the coordinates of the point along the y axis:'))
 
-        if math.pow((circle1.x - self.a), 2) + math.pow((circle1.y - self.b), 2) <= math.pow((circle1.r), 2):
+
+        if math.pow((circle.x - self.a), 2) + math.pow((circle.y - self.b), 2) <= math.pow((circle.r), 2):
             print('Точка находится в окружности')
         else:
             print('Точка не попадает в окружность')
 
 
 circle1 = Circle(2, 5, 10)
-point = Point(10, 20)
+point = Point(10, 10)
 point.check_point(circle1)
 print('================')
 circle1.pretty_print()
