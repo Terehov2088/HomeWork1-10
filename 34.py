@@ -8,7 +8,6 @@ import math
 import random
 
 class Godzilla():
-    fill_stomach = 0 # глобальный счетчик получается у меня это
     PERCENT_FILL = 90/100
 
 
@@ -16,6 +15,7 @@ class Godzilla():
         self.name = name
         self.age = age
         self.stomach_value = stomach_value
+        self.fill_stomach = 0
         # self.total_stomach = self.godzilla_eat
         # print(self.fill_stomach.count(0))
         # print(len(self.fill_stomach))
