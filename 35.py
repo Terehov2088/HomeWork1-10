@@ -33,6 +33,7 @@ class Point():
             print('Точка не попадает в окружность')
 
 
+
 circle1 = Circle(2, 5, 10)
 point = Point(10, 10)
 point.check_point(circle1)

@@ -15,6 +15,7 @@ class Train(Vehicle):
         return travel_distance
 
 
+
     def pretty_print(self):
         super().pretty_print()
         print('Mass_train, t:', self.mass)

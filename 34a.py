@@ -41,6 +41,7 @@ class Godzilla():
                 break
 
 
+
     def filled_stomach(self):
         filled_stomach = 0
         for elem in self.fill_stomach:

@@ -11,6 +11,7 @@ class Godzilla():
     PERCENT_FILL = 90/100
 
 
+
     def __init__(self, name, age, stomach_value):
         self.name = name
         self.age = age

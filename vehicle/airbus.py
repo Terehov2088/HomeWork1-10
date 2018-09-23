@@ -14,6 +14,7 @@ class Airbus(Vehicle):
         return distance_flight
 
 
+
     def pretty_print(self):
         super().pretty_print()
         print('Tank volume, t:', self.tank_volume)

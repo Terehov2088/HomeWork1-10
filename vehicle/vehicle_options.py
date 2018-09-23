@@ -6,7 +6,7 @@
 
 
 class Vehicle():
-    EXTRA_CHARGE = 3
+    EXTRA_CHARGE = 4
 
 
     def __init__(self, speed, life_time, price):
