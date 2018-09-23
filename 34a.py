@@ -44,7 +44,7 @@ class Godzilla():
     def filled_stomach(self):
         filled_stomach = 0
         for elem in self.fill_stomach:
-            if filled_stomach < int(self.stomach_value() * 90 / 100) and (filled_stomach+elem) <= int(self.stomach_value() * 90 / 100):
+            if (filled_stomach+elem) <= int(self.stomach_value() * 90 / 100):
                 filled_stomach += elem
             else:
                 print("Годзилла %s наелся, и больше не может жрать студентов которые не сделали ДЗ" % self.name)

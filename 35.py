@@ -27,7 +27,6 @@ class Point():
 
     def check_point(self, circle):
 
-
         if math.pow((circle.x - self.a), 2) + math.pow((circle.y - self.b), 2) <= math.pow((circle.r), 2):
             print('Точка находится в окружности')
         else:

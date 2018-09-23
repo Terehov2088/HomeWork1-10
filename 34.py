@@ -28,7 +28,7 @@ class Godzilla():
 
     def godzilla_eat(self, mass):
         fill_stomach = self.fill_stomach
-        if fill_stomach < int(self.stomach_value*self.PERCENT_FILL) and int(fill_stomach + mass) < int(self.stomach_value*self.PERCENT_FILL):
+        if int(fill_stomach + mass) < int(self.stomach_value*self.PERCENT_FILL):
             fill_stomach = fill_stomach + mass
             self.fill_stomach = fill_stomach
             print("Годзилла %s не сытый, и еще может жрать студентов которые не сделали ДЗ" % self.name)
