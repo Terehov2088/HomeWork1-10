@@ -30,11 +30,11 @@ def the_most_common_words1(file_path_text, file_path_stop_words):
 
     line = file_text.readline()
     stop = file_stop.read()
-    stop_list = [str(word.strip("!@#$%^&,*():\"|[.] {];'-?_=+\/,.")) for word in stop.split()]
+    stop_list = [word.strip("!@#$%^&,*():\"|[.] {];'-?_=+\/,.") for word in stop.split()]
     top_words = {}
     while line:
         line = line.lower()
-        word_list = [str(word.strip("!@#$%^&,*():\"|[.] {];'-?_=+\/,.")) for word in line.split()]
+        word_list = [word.strip("!@#$%^&,*():\"|[.] {];'-?_=+\/,.") for word in line.split()]
         top_words = complation_word(word_list, stop_list, top_words)
         line = file_text.readline()
 
