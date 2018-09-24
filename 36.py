@@ -9,6 +9,12 @@ train1.pretty_print()
 
 
 
-airbus1 = Airbus(1000,10,30000000 , 20, 1)
+airbus1 = Airbus(
+    speed=1000,
+    old=10,
+    price=30000000,
+    tank_volume=20,
+    fuel_consumption=1
+)
 airbus1.set_color('Green')
 airbus1.pretty_print()
