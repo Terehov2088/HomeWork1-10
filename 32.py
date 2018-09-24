@@ -17,9 +17,11 @@ def the_most_common_words1(file_path_text, file_path_stop_words):
 
     def complation_word(word_list, stop_list, top_words):
         for word in word_list:
-            if word not in stop_list:
+            if word not in stop_list and word != "":
                 if word not in top_words:
-                    top_words[word] = 0
+                    top_words[word] = 1
+                else:
+                    top_words[word] += 1
         return top_words
 
     file_text = open(file_path_text)
@@ -28,28 +30,12 @@ def the_most_common_words1(file_path_text, file_path_stop_words):
 
     line = file_text.readline()
     stop = file_stop.read()
-    stop_list = [str(word.strip("!@#$%.^&*():;[]{]\", |'?-_=+\/,.")) for word in stop.split()]
+    stop_list = [str(word.strip("!@#$%^&,*():\"|[.] {];'-?_=+\/,.")) for word in stop.split()]
     top_words = {}
     while line:
         line = line.lower()
-        word_list = [str(word.strip("!@#$%^&,*():\"| [.]{];'-?_=+\/,.")) for word in line.split()]
-        top_words = complation_word(word_list, stop_list, top_words)
-        line = file_text.readline()
-
-    file_text.close()
-    file_stop.close()
-
-    file_text = open(file_path_text)
-    file_stop = open(file_path_stop_words)
-
-    line = file_text.readline()
-
-    while line:
-        line = line.lower()
         word_list = [str(word.strip("!@#$%^&,*():\"|[.] {];'-?_=+\/,.")) for word in line.split()]
-        for word in word_list:
-            if word in top_words:
-                top_words[word] += 1
+        top_words = complation_word(word_list, stop_list, top_words)
         line = file_text.readline()
 
     file_text.close()
