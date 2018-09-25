@@ -27,7 +27,7 @@ def get_data_from_csv(filename):
 data_lst = get_data_from_csv(r'K:\text1.csv')
 # for data in data_lst:
 #     print('---------------------------')
-#     for k, v in data.items():
+#     for k, v in data.goods():
 #         print('\t', k, '->', v)
 
 end = (len(data_lst)-1)
@@ -42,23 +42,28 @@ counter_pclass_all_3 = 0
 counter_pclass_surv_1 = 0
 counter_pclass_surv_2 = 0
 counter_pclass_surv_3 = 0
-
-
+surv = 'Survived'
+dict = {'dead': [], 'surv':[], 'all':[]}
 for i in range(end, -1, -1):
-    if (data_lst[i]['Survived']) == "0":
+    if (data_lst[i][surv]) == "0":
         if data_lst[i]['Sex'] == "male":
             counter_male_all +=1
         else:
             counter_female_all +=1
 
-        if data_lst[i]['Pclass'] == "1":
-            counter_pclass_all_1 +=1
-        elif data_lst[i]['Pclass'] == "2":
-            counter_pclass_all_2 +=1
-        elif data_lst[i]['Pclass'] == "3":
-            counter_pclass_all_3 +=1
+        dict['dead'].append(data_lst[i]['Pclass'])
+        dict['all'].append(data_lst[i]['Pclass'])
 
-    elif data_lst[i]['Survived'] == "1":
+        # if data_lst[i]['Pclass'] == "1":
+        #     counter_pclass_all_1 +=1
+        # elif data_lst[i]['Pclass'] == "2":
+        #     counter_pclass_all_2 +=1
+        # elif data_lst[i]['Pclass'] == "3":
+        #     counter_pclass_all_3 +=1
+
+    elif data_lst[i][surv] == "1":
+
+
         if data_lst[i]['Sex'] == "male":
             counter_male_all +=1
             counter_male_surv += 1
@@ -66,15 +71,34 @@ for i in range(end, -1, -1):
             counter_female_all +=1
             counter_female_surv += 1
 
-        if data_lst[i]['Pclass'] == "1":
-            counter_pclass_all_1 +=1
-            counter_pclass_surv_1 += 1
-        elif data_lst[i]['Pclass'] == "2":
-            counter_pclass_all_2 +=1
-            counter_pclass_surv_2 += 1
-        elif data_lst[i]['Pclass'] == "3":
-            counter_pclass_all_3 +=1
-            counter_pclass_surv_3 += 1
+        dict['surv'].append(data_lst[i]['Pclass'])
+        dict['all'].append(data_lst[i]['Pclass'])
+
+
+
+
+
+        # if data_lst[i]['Pclass'] == "1":
+        #     counter_pclass_all_1 +=1
+        #     counter_pclass_surv_1 += 1
+        # elif data_lst[i]['Pclass'] == "2":
+        #     counter_pclass_all_2 +=1
+        #     counter_pclass_surv_2 += 1
+        # elif data_lst[i]['Pclass'] == "3":
+        #     counter_pclass_all_3 +=1
+        #     counter_pclass_surv_3 += 1
+
+
+counter_pclass_all_1 = dict['all'].count('1')
+counter_pclass_all_2 = dict['all'].count('2')
+counter_pclass_all_3 = dict['all'].count('3')
+
+counter_pclass_surv_1 = dict['surv'].count('1')
+counter_pclass_surv_2 = dict['surv'].count('2')
+counter_pclass_surv_3 = dict['surv'].count('3')
+
+
+
 
 print('Всего мужчин на корабле: %d' % counter_male_all)
 print('Всего выжило мужчин на корабле: %d' %counter_male_surv)
